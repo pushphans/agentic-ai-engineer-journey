@@ -2,6 +2,7 @@ from fastapi import APIRouter
 from fastapi.responses import StreamingResponse
 from app.models.chat_request import chat_request
 from app.chatbot_agent.basic_chatbot_graph import workflow
+from app.chatbot_agent.basic_chatbot_graph import chatbot_states
 from langchain.messages import HumanMessage, AIMessage, SystemMessage
 
 
@@ -13,8 +14,13 @@ async def chat(request: chat_request):
 
     async def generate_chat():
         config = {"configurable": {"thread_id": request.thread_id}}
+
+        initial_state: chatbot_states = {
+            "messages": [HumanMessage(content=request.message)]
+        }
+
         async for chunk in workflow.astream(
-            {"messages": [HumanMessage(content=request.message)]},
+            initial_state,
             config=config,
             stream_mode="messages",
         ):
