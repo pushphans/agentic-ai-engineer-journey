@@ -1,7 +1,7 @@
 name: Sync to Hugging Face Spaces
 on:
   push:
-    branches: [main] # Agar aapki branch ka naam 'master' hai toh yahan change kar lena
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -11,9 +11,25 @@ jobs:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-          lfs: true
+
       - name: Push to HF
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
-          git push --force https://pushphans:$HF_TOKEN@huggingface.co/spaces/Pushphans/basic-chatbot main
+          # 1. Chatbot wale folder ke andar jao
+          cd learnings/01_basic_chatbot
+          
+          # 2. Temporary Git setup karo taaki sirf is folder ka maal push ho
+          git init
+          git config user.name "pushphans"
+          git config user.email "pushp.hans1502@gmail.com"
+          
+          # 3. Hugging Face Space ko as a remote add karo
+          git remote add space https://pushphans:$HF_TOKEN@huggingface.co/spaces/Pushphans/basic-chatbot
+          
+          # 4. Files add aur commit karo
+          git add .
+          git commit -m "Sync from GitHub Action: $(date)"
+          
+          # 5. Force push karo HF ki main branch par
+          git push --force space master:main
