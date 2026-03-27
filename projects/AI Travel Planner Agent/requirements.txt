@@ -2,4 +2,5 @@ langchain
 langchain-groq
 langgraph
 fastapi
+uvicorn
 pydantic-settings

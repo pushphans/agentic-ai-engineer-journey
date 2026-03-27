@@ -4,9 +4,16 @@ from pydantic import BaseModel, Field
 from typing import Optional, TypedDict, Annotated, Literal
 from langgraph.graph.message import add_messages, AnyMessage
 from langchain.messages import AIMessage, SystemMessage, HumanMessage
+from app.core.config import settings
+import os
+from langgraph.checkpoint.memory import InMemorySaver
+
+
+os.environ["GROQ_API_KEY"] = settings.GROQ_API_KEY
+
 
 # LLM
-llm = init_chat_model(model="llama-3.3-70b-versatile", model_provider="groq")
+llm = init_chat_model(model="openai/gpt-oss-120b", model_provider="groq")
 
 
 # OUTPUT STRUCTURE
@@ -92,4 +99,6 @@ graph.add_conditional_edges(
 )
 graph.add_edge("plan_node", END)
 
-workflow = graph.compile()
+memory = InMemorySaver()
+
+workflow = graph.compile(checkpointer=memory)
