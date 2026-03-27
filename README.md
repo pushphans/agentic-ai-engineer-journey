@@ -1,8 +1,8 @@
-# 🚀 Applied AI Engineer Journey
+# 🚀 Agentic AI Engineer Journey
 
-A documented journey of becoming a production-ready Applied AI Engineer — from Jupyter notebooks to real deployed systems.
+A documented journey of becoming a production-ready Agentic AI Engineer — from Jupyter notebooks to real deployed systems.
 
-Built by **Pushp Hans** | Flutter Developer → Applied AI Engineer
+Built by **Pushp Hans** | Flutter Developer → Agentic AI Engineer
 
 ---
 
