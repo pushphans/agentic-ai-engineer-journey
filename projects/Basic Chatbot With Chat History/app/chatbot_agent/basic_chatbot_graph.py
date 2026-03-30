@@ -7,7 +7,7 @@ from langgraph.checkpoint.memory import MemorySaver
 
 
 # MODELS
-llm = init_chat_model(model="gpt-4o-mini", model_provider="openai")
+llm = init_chat_model(model="openai/gpt-oss-120b", model_provider="groq", api_key=settings.GROQ_API_KEY)
 
 
 # STATES
