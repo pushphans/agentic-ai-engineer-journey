@@ -7,7 +7,7 @@ from app.core.agent_state import AgentState
 
 # LLM INITIALIZATION
 llm = init_chat_model(
-    model="gpt-4o-mini", model_provider="openai", api_key=settings.OPENAI_API_KEY
+    model="gpt-4o-mini", model_provider="groq", api_key=settings.GROQ_API_KEY
 )
 
 
