@@ -5,7 +5,7 @@ from app.core.config import settings
 
 # LLM INITIALIZATION
 llm = init_chat_model(
-    model="gpt-4o-mini", model_provider="openai", api_key=settings.OPENAI_API_KEY
+    model="openai/gpt-oss-120b", model_provider="groq", api_key=settings.GROQ_API_KEY
 )
 
 
