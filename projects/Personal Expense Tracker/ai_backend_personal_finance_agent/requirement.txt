@@ -1,0 +1,7 @@
+langchain
+langgraph
+langchain-google-genai
+fastapi
+uvicorn
+pydantic-settings
+supabase
