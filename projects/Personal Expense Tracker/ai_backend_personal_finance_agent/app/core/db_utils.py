@@ -76,11 +76,10 @@ async def fetch_chat_history(user_id: str, session_id: str, limit: int = 10):
 
     except Exception as e:
         print(f"❌ Error fetching history: {e}")
+        return []
 
 
-async def save_expenses(
-    user_id: str, item: str, amount: float, category: str
-):
+async def save_expenses(user_id: str, item: str, amount: float, category: str):
 
     try:
         supabase = await get_supabase_client()

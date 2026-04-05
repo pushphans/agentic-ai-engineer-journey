@@ -1,9 +1,0 @@
-langchain
-langchain-openai
-langgraph
-fastapi
-uvicorn 
-pydantic-settings
-psycopg-pool
-langgraph-checkpoint-postgres
-psycopg-binary
