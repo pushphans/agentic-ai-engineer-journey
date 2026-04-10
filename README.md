@@ -18,20 +18,20 @@ To become a professional Applied AI Engineer who can:
 ## 🗺️ Learning Path
 
 ### ✅ Phase 1 — Foundations (In Progress)
-- ✅ LangGraph — State, Nodes, Edges, Checkpointer, Thread ID
-- ✅ FastAPI — Wrapping LLM agents, StreamingResponse, MemorySaver
-- ✅ Environment setup — `.env`, secrets management
+-  LangGraph — State, Nodes, Edges, Checkpointer, Thread ID
+-  FastAPI — Wrapping LLM agents, StreamingResponse, MemorySaver
+-  Environment setup — `.env`, secrets management
 
 ### 🔜 Phase 2 — Production Ready
-- ✅ Docker — Containerizing the agent
-- ✅ Deploy on Railway — Live URL
-- [ ] PostgreSQL — Persistent conversation history
-- [ ] LangSmith — Debugging and tracing agents
+-  Docker — Containerizing the agent
+-  Deploy on Railway — Live URL
+-  PostgreSQL — Persistent conversation history
+-  LangSmith — Debugging and tracing agents
 
 ### 🔜 Phase 3 — Advanced
-- [ ] RAG Pipeline — Chat with documents
-- [ ] Multi-agent systems
-- [ ] Redis + Queue system — Handling heavy load
+-  RAG Pipeline — Chat with documents
+-  Multi-agent systems
+-  Redis + Queue system — Handling heavy load
 
 ---
 
